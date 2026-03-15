@@ -20,14 +20,20 @@ export const UploadZone = ({ onFile, market, setMarket }) => {
       <div className="w-full max-w-md fade">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="text-5xl mb-4">📄</div>
-          <h1 className="text-3xl font-bold text-white mb-2">Resume Analyzer</h1>
-          <p className="text-sm" style={{ color:'#6b7280' }}>
+          <h1 className="text-3xl font-bold text-white mb-2 flex items-center justify-center gap-2">
+            <span className="text-3xl">📄</span> Resume Analyzer
+          </h1>
+          <p className="text-sm tracking-widest uppercase" style={{ color:'#6b7280' }}>
             ATS scoring · salary benchmarking · market fit
           </p>
-          <p className="text-xs mt-1" style={{ color:'#4b5563' }}>
-            Powered by GLM-4.7 · your resume never leaves your browser
-          </p>
+          <div
+            className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 rounded-full text-xs"
+            style={{ background:'rgba(124,58,237,.1)', border:'1px solid var(--border)', color:'#9ca3af' }}
+          >
+            <span>Powered by GLM-4.7</span>
+            <span style={{ color:'#4b5563' }}>·</span>
+            <span>🔒 your resume never leaves your browser</span>
+          </div>
         </div>
 
         {/* Market Picker */}
