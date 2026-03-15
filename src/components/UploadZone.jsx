@@ -16,19 +16,19 @@ export const UploadZone = ({ onFile, market, setMarket }) => {
   const onChange    = e => pick(e.target.files[0]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-10">
       <div className="w-full max-w-md fade">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-white mb-2 flex items-center justify-center gap-2">
+        <div className="text-center mb-6">
+          <h1 className="text-3xl font-bold text-white mb-1.5 flex items-center justify-center gap-2">
             <span className="text-3xl">📄</span> Resume Analyzer
           </h1>
-          <p className="text-sm tracking-widest uppercase" style={{ color:'#6b7280' }}>
+          <p className="text-xs tracking-wider uppercase whitespace-nowrap" style={{ color:'#6b7280' }}>
             ATS scoring · salary benchmarking · market fit
           </p>
           <div
-            className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 rounded-full text-xs"
-            style={{ background:'rgba(124,58,237,.1)', border:'1px solid var(--border)', color:'#9ca3af' }}
+            className="inline-flex items-center gap-1.5 mt-2.5 px-3 py-1.5 rounded-full whitespace-nowrap"
+            style={{ background:'rgba(124,58,237,.1)', border:'1px solid var(--border)', color:'#9ca3af', fontSize:'10px' }}
           >
             <span>Powered by GLM-4.7</span>
             <span style={{ color:'#4b5563' }}>·</span>
@@ -41,7 +41,7 @@ export const UploadZone = ({ onFile, market, setMarket }) => {
 
         {/* Drop Zone */}
         <div
-          className={`dz rounded-2xl p-12 text-center cursor-pointer ${dragging ? 'dz-active' : ''} ${file ? 'dz-filled' : ''}`}
+          className={`dz rounded-2xl p-8 text-center cursor-pointer ${dragging ? 'dz-active' : ''} ${file ? 'dz-filled' : ''}`}
           onDrop={onDrop} onDragOver={onDragOver} onDragLeave={onDragLeave}
           onClick={() => inputRef.current?.click()}
         >
@@ -66,14 +66,14 @@ export const UploadZone = ({ onFile, market, setMarket }) => {
         </div>
 
         {/* Target Roles */}
-        <div className="mt-5">
+        <div className="mt-4">
           <RoleInput roles={roles} setRoles={setRoles} />
         </div>
 
         {/* Analyze button */}
         <button
           onClick={() => file && onFile(file, roles)}
-          className="w-full mt-2 py-3.5 rounded-xl font-bold text-sm transition-all duration-200"
+          className="w-full mt-1.5 py-3 rounded-xl font-bold text-sm transition-all duration-200"
           style={{
             background: file ? 'linear-gradient(135deg,#7c3aed,#a855f7)' : '#1e1e35',
             color: file ? '#fff' : '#4b5563',
